@@ -57,14 +57,14 @@ window.addEventListener("scroll", () => {
 const menuBtn = document.getElementById("menu-btn");
 const navbar = document.getElementById("navbar");
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navbar) {
 
-    navbar.classList.toggle("active");
+    menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuBtn.classList.toggle("open");
+    });
 
-    menuBtn.classList.toggle("open");
-
-});
-
+}
 
 /* ==========================================================
    CHIUSURA MENU AL CLICK
@@ -218,3 +218,4 @@ const animationObserver = new IntersectionObserver((entries) => {
 animatedElements.forEach(element => {
     animationObserver.observe(element);
 });
+
